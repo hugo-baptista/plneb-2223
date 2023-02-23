@@ -1,4 +1,5 @@
 # Repositório PLN MEBIOM - Ano 22/23
+Autor:
 ```
-Hugo Baptista Fernandes Silva - PG50416
+PG50416 Hugo Baptista Fernandes Silva
 ```
