@@ -1,3 +1,4 @@
 {
-    "editor.fontFamily": "'JetBrains Mono NL ExtraLight'"
+    "editor.fontFamily": "'JetBrains Mono NL ExtraLight'",
+    "editor.fontSize": 12
 }
