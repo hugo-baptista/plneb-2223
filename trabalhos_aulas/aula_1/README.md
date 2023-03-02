@@ -1,4 +1,4 @@
-# Aula 1
+# Resolução dos exercícios da Aula 1
 
 ## Parte 1 - Exercícios do slide 17
 
