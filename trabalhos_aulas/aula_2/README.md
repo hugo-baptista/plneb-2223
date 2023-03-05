@@ -16,9 +16,9 @@ Utilizei 3 grupos para separar os nomes: o 1º grupo captura o primeio nome, o 3
 Considerei que o objetivo da função é dividir e devolver uma lista dos códigos postais válidos, e não apenas dizer quais são ou não válidos (como no exercício 2).
 
 ### Exercício 5
-Utilizei uma função lambda para conseguir o valor das abreviaturas no dicionário.
+Utilizei uma função lambda para conseguir o valor das abreviaturas no dicionário diretamente do re.sub().
 
 ### Exercício 6
 Fiz 2 resoluções para este exercício:
-- Como há 3 "campos" possíveis para criar as matrículas, no qual podem ser preenchidos com letras maiúsculas ou com números, exceto se os 3 forem simultâneamente de 1 só tipo, então há 6 formatos possíveis (AA-00-00, AA-AA-00, AA-00-AA, 00-AA-AA, 00-00-AA e 00-AA-00), pelo que, para simplificar, criei uma lista com os 6 possíveis formatos para verificar se as matrículas são válidas.
-- Como os 3 "campos" não podem ser todos simultâneamente maiúculas ou todos números, então primeiro valido todos os que apresentam os 3 "campos" separados por "-" ou " ", e depois invalido os que apresentam AA-AA-AA e 00-00-00.
+- Existem 6 formatos possíveis para as matrículas (AA-00-00, AA-AA-00, AA-00-AA, 00-AA-AA, 00-00-AA e 00-AA-00), pelo que, para simplificar, criei uma lista com os 6 possíveis formatos para verificar se as matrículas são válidas. Assim, para cada matrícula, realizam-se 6 procuras distintas.
+- Como, para matrículas que apresentem maiúsculas e números apenas os formatos AA-AA-AA e 00-00-00 são inválidas, então pode-se primeiro validar aquelas que apresentam apenas maiúculas e números, filtrando (invalidando) dessas as que apresentam tudo maiúsculas ou tudo números. Assim, para cada matrícula válida, há no máximo 2 procuras.
