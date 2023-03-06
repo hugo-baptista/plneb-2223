@@ -31,4 +31,4 @@ Fiz 2 resoluções para este exercício:
 Primeiro, procuro todas as instâncias da forma [PEDIDO], de seguida percorro todas essas instâncias, pedindo o input do utilizados para cada uma delas e substituíndo a primeira instância da forma [PEDIDO] do texto pela resposta.
 
 ### Exercício 8
-Neste caso, analisa cada palavra individualmente (delimitada por word boundaries), e se as palavras a seguir tiverem os mesmos dígitos (não diferenciando as maiúsculas das minúsculas), substitui todas as instâncias dessa palavra pela primeira (ou seja, se o texto tiver, por exemplo, "EsTe este eSTe", substitui-os por "EsTe" - o primeiro que aparece).
+Neste caso, analisa cada palavra individualmente (delimitada por word boundaries), e se as palavras a seguir tiverem os mesmos caracteres (não diferenciando as maiúsculas das minúsculas), substitui todas as instâncias dessa palavra pela primeira (ou seja, se o texto tiver, por exemplo, "EsTe este eSTe", substitui-os por "EsTe" - o primeiro que aparece).
