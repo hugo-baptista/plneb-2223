@@ -1,5 +1,8 @@
 # Resolução dos exercícios da Aula 2
 
+## RegexCrossword
+Tentei fazer login com o email institucional para aparecer o número de aluno, conforme o indicado pelo professor, mas não consegui, por isso entrei com a conta do GitHub, e por isso o cabeçalho do site não tem identificação. Ainda assim, abri a blackboard e dá para ver, no separador ao lado, o meu nome.
+
 ## Ficha_RE_1
 
 ### Exercício 2
