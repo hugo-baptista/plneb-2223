@@ -2,7 +2,8 @@
 
 ## Ficha_RE_1
 
-
+### Exercício 2
+Assumi que o sinal de pontuação válido para o final de uma expressão pode ser ";", ":", ".", "?" e "!"
 
 ## Ficha_RE_2
 
