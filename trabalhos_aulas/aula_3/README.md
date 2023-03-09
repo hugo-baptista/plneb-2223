@@ -66,7 +66,7 @@ Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed 
 É este o princípio de funcionamento da versão 3, que realiza as seguintes operações:
 - Remoção dos \f em strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])", ou seja, um \f cuja linha seguinte ao mesmo começa por uma letra maiúscula, seja ela de A a Z ou qualquer outro caractere especial da língua portuguesa (correspondente ao primeiro caso apresentado).
 - Remoção dos restantes \n\f+ (correspondente ao segundo e terceiro caso).
-- Marcação, com "#T=", dos termos, ou seja, das linhas seguidas por "\n\n", dois "new line".
+- Marcação, com "#T=", dos termos, ou seja, das linhas seguidas por "\n\n".
 - Marcação, com "#E=", das explicações dos termos, ou seja, das restantes linhas.
 - Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por "#E=" em uma só linha.
 - Remoção dos marcadores "#T=" e "#E=".
