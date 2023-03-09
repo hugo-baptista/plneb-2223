@@ -35,3 +35,4 @@ Mas a explicação também pode ser "desformatada" a meio, e não apenas no iní
 
 \f<fim da explicação>
 ```
+Este problema indica que a correção da "desformatação" causada pelos caracteres de Form Feed tem de ser corrigida no momento em que os removemos, e não posteriormente, com as marcações do texto, pois nesse momento não sabemos onde eles estavam.
