@@ -11,7 +11,7 @@ remove_new_lines = re.sub(r"(#E=.+)(?:\n#E=(.+))+", r"\1 \2", correct_expl)
 remove_marks = re.sub(r"#[TE]=", r"", remove_new_lines)
 entries = re.findall(r"\n\n(.+)\n(.+)", remove_marks)
 
-html = open("trabalhos_aulas/aula_3/dicionario_medico.html", "w")
+html = open("trabalhos_aulas/aula_3/dicionario_medico_1.html", "w")
 
 header = """
 <html>
