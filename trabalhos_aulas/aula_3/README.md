@@ -61,3 +61,13 @@ Assim, verifica-se que os caracteres de Form Feed podem aparecer em 3 situaçõe
 Como será possível distinguir estres 3 casos? Uma possível maneira é o facto da explicação ser sempre iniciada por uma letra maiúscula, quanto que o termo e o resto da explicação iniciam, em regra geral, por letra minúscula.
 
 Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed aparece se inicia por uma letra maiúscula, este tem de ser simplesmente removido. Já no segundo e no terceiro caso, para além da remoção do \f, também podemos remover um \n anterior ao mesmo.
+
+É assim o princípio de funcionamento da versão 3, que realiza as seguintes operações:
+- Remoção dos \f em strings do género \f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ]), ou seja, um \f cuja linha seguinte ao mesmo começa por uma letra maiúscula, seja ela de A a Z ou qualquer outro caractere especial da língua portuguesa (correspondente ao primeiro caso apresentado).
+- Remoção dos restantes \n\f+ (correspondente ao segundo e terceiro casos apresentados).
+- Marcação, com "#T=", dos termos, ou seja, das linhas seguidas por "\n\n", dois "new line".
+- Marcação, com "#E=", das explicações dos termos, ou seja, das restantes linhas.
+- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por "#E=" em uma só linha.
+- Remoção dos marcadores "#T=" e "#E=".
+
+A restante conversão para o ficheiro HTML é semelhante à realizada na versão 2, ou seja, para uma tabela.
