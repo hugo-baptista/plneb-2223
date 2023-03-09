@@ -59,3 +59,5 @@ Assim, verifica-se que os caracteres de Form Feed podem aparecer em 3 situaçõe
 ```
 
 Como será possível distinguir estres 3 casos? Uma possível maneira é o facto da explicação ser sempre iniciada por uma letra maiúscula, quanto que o termo e o resto da explicação iniciam, em regra geral, por letra minúscula.
+
+Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed aparece se inicia por uma letra maiúscula, este tem de ser simplesmente removido. Já no segundo e no terceiro caso, para além da remoção do \f, também podemos remover um \n anterior ao mesmo.
