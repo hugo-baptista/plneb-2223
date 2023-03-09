@@ -22,7 +22,7 @@ Assim sendo, utiliza estes tuplos para contruir um ficheiro html que apresenta u
 O processamento do texto é o mesmo da versão 1, mas o ficheiro html que contrói ilustra do dicionário em formato de tabela. Também foi criado um ficheiro css, responsável por alterar as cores e o formato da tabela, para uma leitura mais fácil.
 
 ### Problema com a Versão 2
-Verifica-se em entradas como "anti-séptico", "análise didática", "eclâmpsia", "elemento", entre outros, que a "correção" das explicações realizada não é suficiente, pois apenas tem em consideração as "desformatações" em que a explicação aparece "separada" do termo, ou seja, de casos do tipo:
+Verifica-se em entradas como "anti-séptico", "análise didática", "eclâmpsia" e "elemento", entre outras, que a "correção" das explicações realizada não é suficiente, pois apenas tem em consideração as "desformatações" em que a explicação aparece "separada" do termo, ou seja, de casos do tipo:
 ```
 <termo>
 
