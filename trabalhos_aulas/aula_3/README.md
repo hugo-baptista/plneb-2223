@@ -14,7 +14,7 @@ Feito na aula, procede ao seguintes passos de processamento do texto:
 - Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por "#E=" em uma só linha.
 - Remoção dos marcadores "#T=" e "#E=".
 
-De seguida, procura todas as entradas com o formato regex \n\n(.+)\n(.+), retornando uma lista de tuplos em que o primeiro elemento é um termo e o segundo elemento é a sua explicação.
+De seguida, procura todas as entradas com o formato regex \n\n(.+)\n(.+), retornando uma lista de tuplos em que o primeiro elemento é um termo e o segundo elemento é a sua explicação (ou pelo menos, é esse o objetivo).
 
 Assim sendo, utiliza estes tuplos para contruir um ficheiro html que apresenta uma lista destes.
 
