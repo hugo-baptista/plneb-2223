@@ -5,9 +5,9 @@ text = file.read()
 
 remove_form_feed = re.sub(r"\f", "", text)
 mark_terms = re.sub(r"\n\n(.+)", r"\n\n#T=\1", remove_form_feed)
-mark_descriptions = re.sub(r"\n([^#\s].+)", r"\n#E=\1", mark_terms)
-correct_descriptions = re.sub(r"(#T=.+)\n\n#T=(.+)", r"\1\n#E=\2", mark_descriptions)
-remove_new_lines = re.sub(r"(#E=.+)(?:\n#E=(.+))+", r"\1 \2", correct_descriptions)
+mark_explications = re.sub(r"\n([^#\s].+)", r"\n#E=\1", mark_terms)
+correct_explications = re.sub(r"(#T=.+)\n\n#T=(.+)", r"\1\n#E=\2", mark_explications)
+remove_new_lines = re.sub(r"(#E=.+)(?:\n#E=(.+))+", r"\1 \2", correct_explications)
 remove_marks = re.sub(r"#[TE]=", r"", remove_new_lines)
 entries = re.findall(r"\n\n(.+)\n(.+)", remove_marks)
 
