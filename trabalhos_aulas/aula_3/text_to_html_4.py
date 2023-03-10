@@ -24,29 +24,34 @@ html = open("trabalhos_aulas/aula_3/dicionario_medico_4.html", "w", encoding="ut
 
 header = """
 <html>
-<head>
-<link rel="stylesheet" href="styles.css" />
-<meta charset='uft-8' />
-</head>
-<body>
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset='uft-8' />
+    </head>
 """
 
 body = """
-<table>
-<tr>
-<th>Termo</th>
-<th>Explicação</th>
-</tr>
+    <body>
+        <table>
+            <tr>
+                <th>Termo</th>
+                <th>Explicação</th>
+            </tr>
 """
 for entry in entries:
-    body += "<tr>"
-    body += f"<td>{entry[0]}</td>"
-    body += f"<td>{entry[1]}</td>"
-    body += "</tr>"
-body += "</table>"
+    body += f"""
+            <tr>
+                <td>{entry[0]}</td>
+                <td>{entry[1]}</td>
+            </tr>
+"""
+    
+body += """
+        </table>
+    </body>
+"""
 
 footer = """
-</body>
 </html>
 """
 
