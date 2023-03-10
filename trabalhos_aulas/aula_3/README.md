@@ -72,3 +72,24 @@ Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed 
 - Remoção dos marcadores "#T=" e "#E=".
 
 A restante conversão para o ficheiro HTML é semelhante à realizada na versão 2, ou seja, para uma tabela.
+
+### Problema com a Versão 3
+A remoção dos \f em strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])" pode vir a ter problemas caso existam \f em explicações nas quais a próxima linha comece com uma letra maiúscula, como por exemplo um nome. Para tentar verificar a existência destes casos, criei o ficheiro "search_term_ff.py" que coloca todas as strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])" num ficheiro de texto "v3/0_search.txt". Efetivamente, verifica-se que este caso acontece nos termos "Fahrenheit" e "parasito":
+```
+Fahrenheit, termômetro de
+Termômetro com graduação de Fahrenheit, marcando 32 graus na congelação e 212 graus na ebulição,
+
+convertida em ºC, escala usada no Brasil, através da seguinte fórmula: ºC = ((F - 32 x 5) / 9). O termo advém de
+Daniel Gabriel Fahrenheit, físico alemão (168
+```
+```
+parasito
+
+Ser vivo animal ou vegetal que durante parte ou toda a sua existência vive às custas de outros seres vivos; em
+Atenas (a da Grécia clássica) ministros encarregados da colheita do trigo e preparadores dos banquetes às
+divindades eram denominados parasitos.
+```
+Porém, como este apenas ocorre em 2 casos, segundo o indicado por estes ficheiros, mais fácil será corrigir esta "desformatação" manualmente do que arranjar outros padrões para o fazer em python, por se tratar de uma quantidade pequena de casos.
+
+## Versão 4
+Esta versão é igual, em código, à versão 3, mas o texto que utiliza é uma alteração do dicionário_medico original que tenha em conta os casos dos termos "Fahrenheit" e "parasito" apresentado.

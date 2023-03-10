@@ -8907,10 +8907,7 @@ fagopirismo
 Hipersensibilidade a determinados alimentos, com sintomas tóxicos leves, após a ingestão deles.
 
 Fahrenheit, termômetro de
-Termômetro com graduação de Fahrenheit, marcando 32 graus na congelação e 212 graus na ebulição,
-
-convertida em ºC, escala usada no Brasil, através da seguinte fórmula: ºC = ((F - 32 x 5) / 9). O termo advém de
-Daniel Gabriel Fahrenheit, físico alemão (168
+Termômetro com graduação de Fahrenheit, marcando 32 graus na congelação e 212 graus na ebulição, convertida em ºC, escala usada no Brasil, através da seguinte fórmula: ºC = ((F - 32 x 5) / 9). O termo advém de Daniel Gabriel Fahrenheit, físico alemão (168
 
 faio
 V. feo.
@@ -18021,9 +18018,7 @@ parasitemia
 Presença de parasitos no sangue.
 
 parasito
-
-Ser vivo animal ou vegetal que durante parte ou toda a sua existência vive às custas de outros seres vivos; em
-Atenas (a da Grécia clássica) ministros encarregados da colheita do trigo e preparadores dos banquetes às divindades eram denominados parasitos.
+Ser vivo animal ou vegetal que durante parte ou toda a sua existência vive às custas de outros seres vivos; em Atenas (a da Grécia clássica) ministros encarregados da colheita do trigo e preparadores dos banquetes às divindades eram denominados parasitos.
 
 parassimpático
 Parte do sistema nervoso autônomo, também chamado de vago.
