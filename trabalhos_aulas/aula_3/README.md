@@ -79,13 +79,13 @@ A remoção dos \f em strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])"
 Fahrenheit, termômetro de
 Termômetro com graduação de Fahrenheit, marcando 32 graus na congelação e 212 graus na ebulição,
 
-convertida em ºC, escala usada no Brasil, através da seguinte fórmula: ºC = ((F - 32 x 5) / 9). O termo advém de
+\fconvertida em ºC, escala usada no Brasil, através da seguinte fórmula: ºC = ((F - 32 x 5) / 9). O termo advém de
 Daniel Gabriel Fahrenheit, físico alemão (168
 ```
 ```
 parasito
 
-Ser vivo animal ou vegetal que durante parte ou toda a sua existência vive às custas de outros seres vivos; em
+\fSer vivo animal ou vegetal que durante parte ou toda a sua existência vive às custas de outros seres vivos; em
 Atenas (a da Grécia clássica) ministros encarregados da colheita do trigo e preparadores dos banquetes às
 divindades eram denominados parasitos.
 ```
