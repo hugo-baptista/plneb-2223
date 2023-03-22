@@ -27,3 +27,5 @@ Para a criação do ficheiro final, o ficheiro "LIVRO-Doenças-do-Aparelho-Diges
 O primeiro corresponde a um índice, que redireciona o utilizados para a pagina pretendida no segundo ficheiro. O segundo ficheiro contem toda a informação do ficheiro original, e o terceiro junta os dois numa só página.
 
 Assim, apenas o segundo ficheiro é necessário para criar as anotações, visto que só este tem a informação do ficheiro original.
+
+Deste modo, leu-se o ficheiro "LIVRO-Doenças-do-Aparelho-Digestivos.html", dividindo-o por linhas. De seguida, para cada linha, retirou-se os marcadores HTML do tipo "<.+>" e verificou-se se as palavras nela contidas estavam presentes no nas keys do "dicinário.json", dicionando um marcador do género "<a href title=explicação>termo</a>".
