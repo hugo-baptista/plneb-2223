@@ -1,7 +1,29 @@
 # Resolução do exercício da Aula 4 - XML to HTML?
 
 ## XML to HTML
+Primeiramente, foi criado um programa "xml_to_html.py" que transforma um ficheiro XML num HTML.
+Para tal, o ficheiro XML utilizado foi o "dicionario_medico.xml" presente no repositório do professor, seguido de um conjunto de transformações para o adequar ao ficheiro HTML, que são:
+- Remoção dos caracteres de Form Feed;
+- Remoção dos marcadores <text...> e </text>;
+- Marcação dos termos com "#T=";
+- Remoção dos restantes marcadores <...>;
+- Marcação das explicações com "#E=";
+- Colapsar explicações (remover New Lines).
 
-## Criar dicionário JSON
+De seguida, reutilizou-se o código do programa "text_to_html_4.py" para construir o ficheiro HTML final, guardado como "dicionario_medico.html"
 
-## Criar anotações
+## Anotar ficheiro
+
+### Criar dicionário JSON
+Para anotar o ficheiro "LIVRO-Doenças-do-Aparelho-Digestivo.pdf", será utilizado um dicionário de forma a, a partir do termo, ser acrescentado a sua explicação quando o ponteiro do rato lhe passar por cima.
+
+Assim, foi criado o programa "criar_dicionario_json.py" para esse efeito, reutilizando o tratamento do ficheiro XML criado anteriormente, mas alterando a forma final do ficheiro guardado, que em vez de ser um HTML em forma de tabela, as relações termo-explicação são transferidas para um dicionário python e guardadas num ficheiro em formato json "dicionario.json".
+
+### Criar anotações
+Para a criação do ficheiro final, o ficheiro "LIVRO-Doenças-do-Aparelho-Digestivo.pdf" foi transformado em HTML, com recurso ao comando pdftohtml, criando assim 3 ficheiros JPG e 3 HTML, guardados na pasta "html_original". Os ficheiros JPG correspondem às imagens do PDF original, e os 3 HTML são:
+- LIVRO-Doenças-do-Aparelho-Digestivo_ind.html
+- LIVRO-Doenças-do-Aparelho-Digestivos.html
+- LIVRO-Doenças-do-Aparelho-Digestivo.html
+O primeiro corresponde a um índice, que redireciona o utilizados para a pagina pretendida no segundo ficheiro. O segundo ficheiro contem toda a informação do ficheiro original, e o terceiro junta os dois numa só página.
+
+Assim, apenas o segundo ficheiro é necessário para criar as anotações, visto que só este tem a informação do ficheiro original.
