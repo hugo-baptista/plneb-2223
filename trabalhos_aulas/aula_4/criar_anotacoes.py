@@ -13,13 +13,23 @@ termos = dicionario.keys()
 
 html_text =""
 for line in text_lines:
-    words = re.sub(r"<.+?>", r" ", line)
-    for word in re.findall(r"\b.+?\b", words):
+    start = re.search(r"^(<.+?>)*", line)
+    line = re.sub(r"^(<.+?>)*", r" ", line)
+    end = re.search(r"(<.+?>)*$", line)
+    line = re.sub(r"(<.+?>)*$", r" ", line)
+    new_line = ""
+    new_line += start[0]
+    for word in line.split():
         if word.lower() in termos:
-            line = re.sub(word, r"<a href title=" + dicionario.get(word.lower()) + r">" + word + "</a>", line)
+            new_line += "<a href title=" + dicionario.get(word.lower()) + ">" + word + "</a>"
         elif word in termos:
-            line = re.sub(word, r"<a href title=" + dicionario.get(word) + r">" + word + "</a>", line)
-    html_text+=line+"\n"
+            new_line += "<a href title=" + dicionario.get(word) + ">" + word + "</a>"
+        else:
+            new_line += word
+        new_line +=" "
+    new_line += end[0]
+    new_line += "\n"
+    html_text += new_line
 
 html = open("trabalhos_aulas/aula_4/html_anotado/LIVRO-Doenças-do-Aparelho-Digestivos.html", "w", encoding="utf-8")
 html.write(html_text)
