@@ -17,13 +17,14 @@ for line in text_lines:
     line = re.sub(r"^(<.+?>)*", r" ", line)
     end = re.search(r"(<.+?>)*$", line)
     line = re.sub(r"(<.+?>)*$", r" ", line)
+    line = re.sub(r"(<.+?>)", r" \1 ", line)
     new_line = ""
     new_line += start[0]
     for word in line.split():
         if word.lower() in termos:
-            new_line += "<a href title=" + dicionario.get(word.lower()) + ">" + word + "</a>"
+            new_line += f"<a href title=\"{dicionario.get(word.lower())}\">{word}</a>"
         elif word in termos:
-            new_line += "<a href title=" + dicionario.get(word) + ">" + word + "</a>"
+            new_line += f"<a href title=\"{dicionario.get(word)}\">{word}</a>"
         else:
             new_line += word
         new_line +=" "
