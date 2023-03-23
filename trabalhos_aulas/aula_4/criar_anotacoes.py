@@ -21,10 +21,11 @@ for line in text_lines:
     new_line = ""
     new_line += start[0]
     for word in line.split():
-        if word.lower() in termos:
-            new_line += f"<a href title=\"{dicionario.get(word.lower())}\">{word}</a>"
-        elif word in termos:
-            new_line += f"<a href title=\"{dicionario.get(word)}\">{word}</a>"
+        n_word = word.strip(",;.:!?\"")
+        if n_word.lower() in termos:
+            new_line += f"<a href title=\"{dicionario.get(n_word.lower())}\">{word}</a>"
+        elif n_word in termos:
+            new_line += f"<a href title=\"{dicionario.get(n_word)}\">{word}</a>"
         else:
             new_line += word
         new_line +=" "
