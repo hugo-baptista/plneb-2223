@@ -1,33 +1,10 @@
 from flask import Flask
 
-head = """
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>My Flask Application</title>
-        <link rel="stylesheet" href="static/style.css">
-    </head>
-<body>
-"""
+head = open("trabalhos_aulas/aula_6/html/head.html", "r").read()
 
-navbar = """
-<div class="navbar-back">
-    <div class="navbar">
-        <h1>Flask Server</h1>
-        <div class="links">
-            <a href="http://localhost:3000/">Home</a>
-            <a href="http://localhost:3000/termos">Termos</a>
-            <a href="http://localhost:3000/pesquisar">Pesquisar</a>
-            <a href="http://localhost:3000/tabela">Tabela</a>
-        </div>
-    </div>
-</div>
-"""
+navbar = open("trabalhos_aulas/aula_6/html/navbar.html", "r").read()
 
-tail = """
-</body>
-</html>
-"""
+tail = open("trabalhos_aulas/aula_6/html/tail.html", "r").read()
 
 def create_html_page(content):
     return f"""
