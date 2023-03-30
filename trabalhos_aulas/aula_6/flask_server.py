@@ -6,16 +6,16 @@ app = Flask(__name__)
 def home():
     return render_template("home.html", title="Welcome")
 
-@app.route("/termos")
+@app.route("/engenharia")
 def termos():
-    return render_template("termos.html")
+    return render_template("engenharia.html")
 
-@app.route("/pesquisar")
+@app.route("/egua")
 def pesquisar():
-    return render_template("pesquisar.html")
+    return render_template("egua.html")
 
-@app.route("/tabela")
+@app.route("/elefante")
 def tabela():
-    return render_template("tabela.html")
+    return render_template("elefante.html")
 
 app.run(host="localhost", port=3000, debug=True)
