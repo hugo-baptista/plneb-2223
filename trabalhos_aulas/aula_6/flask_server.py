@@ -1,46 +1,21 @@
-from flask import Flask
-
-head = open("trabalhos_aulas/aula_6/html/head.html", "r").read()
-
-navbar = open("trabalhos_aulas/aula_6/html/navbar.html", "r").read()
-
-tail = open("trabalhos_aulas/aula_6/html/tail.html", "r").read()
-
-def create_html_page(content):
-    return f"""
-{head}
-
-{navbar}
-
-{content}
-
-{tail}
-"""
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return create_html_page("""
-<p>Home Placeholder</p>
-""")
+    return render_template("home.html", title="Welcome")
 
 @app.route("/termos")
 def termos():
-    return create_html_page("""
-<p>Termos Placeholder</p>
-""")
+    return render_template("termos.html")
 
 @app.route("/pesquisar")
 def pesquisar():
-    return create_html_page("""
-<p>Pesquisar Placeholder</p>
-""")
+    return render_template("pesquisar.html")
 
 @app.route("/tabela")
 def tabela():
-    return create_html_page("""
-<p>Tabela Placeholder</p>
-""")
+    return render_template("tabela.html")
 
 app.run(host="localhost", port=3000, debug=True)
