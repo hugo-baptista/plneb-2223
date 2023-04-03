@@ -63,3 +63,29 @@
 .content p {
   text-indent: 30px;
 }
+.content iframe {
+  width: 700px;
+  height: 400px;
+}
+
+.content .choices {
+  display: flex;
+  justify-content: center;
+}
+.content .choices * {
+  margin-top: 0;
+}
+.content .choices .choice {
+  text-align: center;
+  padding: 10px;
+  box-shadow: 1px 3px 5px rgba(255, 255, 255, 0.05);
+}
+.content .choices .choice:hover {
+  box-shadow: 1px 3px 5px rgba(255, 255, 255, 0.25);
+}
+.content .choices .choice img {
+  max-width: 200px;
+}
+.content .choices .choice a:link {
+  text-decoration: none;
+}
