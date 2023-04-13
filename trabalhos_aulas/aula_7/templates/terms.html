@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<div class="list-group">
+    {% for designation in designations %}
+        <a href="/term/{{designation}}" class="list-group-item list-group-item-action">{{designation}}</a>
+    {% endfor %}
+</div>
+
+{% endblock %}
