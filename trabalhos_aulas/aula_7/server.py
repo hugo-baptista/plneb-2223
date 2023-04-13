@@ -6,6 +6,11 @@ app = Flask(__name__)
 file = open('./trabalhos_aulas/aula_5/dicionario_pt_en_completo.json')
 dictionary = json.load(file)
 
+notfound={
+    "des": "Not in the dictionary",
+    "en": "Not in the dictionary"
+}
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -16,7 +21,7 @@ def terms():
 
 @app.route("/term/<t>")
 def term(t):
-    return render_template("term.html", designation=t, value=dictionary.get(t, "404 Not Found"))
+    return render_template("term.html", designation=t, value=dictionary.get(t, notfound))
 
 @app.route("/terms/search")
 def termssearch():
