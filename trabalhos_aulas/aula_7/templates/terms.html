@@ -12,6 +12,10 @@
     <button type="submit">Send</button>
 </form>
 
+{% if info %}
+{{ info }}
+{% endif %}
+
 <div class="list-group">
     {% for designation in designations %}
         <a href="/term/{{designation}}" class="list-group-item list-group-item-action">{{designation}}</a>

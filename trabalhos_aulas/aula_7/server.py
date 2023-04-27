@@ -32,13 +32,17 @@ def add_term():
     term = request.form["term"]
     description = request.form["description"]
 
-    database[term]={"des": description}
+    if term not in database:
+        database[term]={"des": description}
 
-    file = open('./trabalhos_aulas/aula_7/database_modified.json', "w")
-    json.dump(database, file, ensure_ascii=False, indent=4)
-    file.close()
+        file = open('./trabalhos_aulas/aula_7/database_modified.json', "w")
+        json.dump(database, file, ensure_ascii=False, indent=4)
+        file.close()
+        return render_template("terms.html", designations=database.keys(),
+                               info="The term " + term + " was added!")
 
-    return render_template("terms.html", designations=database.keys())
+    return render_template("terms.html", designations=database.keys(),
+                           info="The term " + term + " already exists!")
 
 @app.route("/terms/search")
 def termssearch():
