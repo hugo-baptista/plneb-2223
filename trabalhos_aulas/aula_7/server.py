@@ -39,10 +39,25 @@ def add_term():
         json.dump(database, file, ensure_ascii=False, indent=4)
         file.close()
         return render_template("terms.html", designations=database.keys(),
-                               info="The term " + term + " was added!")
+                               info_add="The term " + term + " was added!")
 
     return render_template("terms.html", designations=database.keys(),
-                           info="The term " + term + " already exists!")
+                           info_add="The term " + term + " already exists!")
+
+@app.route("/term/<term>", methods=["DELETE"])
+def delete_term(term):
+    if term in database:
+        old_value = database[term]
+
+        del database[term]
+
+        file = open('./trabalhos_aulas/aula_7/database_modified.json', "w")
+        json.dump(database, file, ensure_ascii=False, indent=4)
+        file.close()
+
+        return {"success": True, "deleted": {term: old_value}}
+
+    return {"success": False, "info": "The entry " + term + " does not exists!"}
 
 @app.route("/terms/search")
 def termssearch():

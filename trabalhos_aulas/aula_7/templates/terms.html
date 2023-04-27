@@ -2,23 +2,38 @@
 
 {% block body %}
 
-<form action="/term" method="POST">
-    <label>Term:</label>
-    <input name="term">
+<div class="mx-2">
+    <h3>Add a new term:</h3>
+</div>
+<div class="mx-4 my-3">
+    <form action="/term" method="POST">
+        <label for="exampleInputPassword1" class="form-label">Term:</label>
+        <input type="text" class="form-control" name="term">
+        
+        <label for="exampleInputPassword1" class="form-label">Description:</label>
+        <input type="text" class="form-control" name="description">
+    
+        <br>
+        <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    
+    {% if info_add %}
+    {{ info_add }}
+    {% endif %}
+</div>
 
-    <label>Description:</label>
-    <input name="description">
-
-    <button type="submit">Send</button>
-</form>
-
-{% if info %}
-{{ info }}
+<div class="mx-2">
+    <h3>List of all the terms:</h3>
+</div>
+{% if info_delete %}
+{{ info_delete }}
 {% endif %}
-
-<div class="list-group">
+<div class="list-group mx-3">
     {% for designation in designations %}
-        <a href="/term/{{designation}}" class="list-group-item list-group-item-action">{{designation}}</a>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a href="/term/{{designation}}" class="list-group-item-action">{{designation}}</a>
+            <button type="button" class="btn btn-danger" onclick="handleDeleteTerm('{{designation}}')">Delete</button>
+        </li>
     {% endfor %}
 </div>
 

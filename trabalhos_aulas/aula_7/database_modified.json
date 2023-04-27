@@ -1,28 +1,4 @@
 {
-    "Å": {
-        "des": "Unidade angström; unidade de comprimento de onda, de radiações eletromagnéticas, igual a 10-7 mm.",
-        "en": "THE"
-    },
-    "a, an": {
-        "des": "Pref. gr.: ausência ou negação (afasia, analgesia); - corruptela do pref. lat. ab (aversão)",
-        "en": "oh oh"
-    },
-    "AA": {
-        "des": "Sigla da instituição internacional dos Alcoólatras Anônimos.",
-        "en": "AA"
-    },
-    "ãa": {
-        "des": "Abreviatura latina que significa &#34;de cada&#34;, usada para designar uma quantidade comum de vários componentes  de uma formulação. Pronuncia-se &#34;aná&#34;.",
-        "en": "oh"
-    },
-    "ab": {
-        "des": "Pref. lat.: negação ou separação (ablepsia, abaxial), aumento ou intensidade (absorver), movimento ou desvio  (aborto).",
-        "en": "ab"
-    },
-    "abacteriano": {
-        "des": "Isento de bactérias; não-bacteriano.",
-        "en": "abacterial"
-    },
     "abactus venter": {
         "des": "Parto prematuro, artificial; aborto induzido.",
         "en": "abatus venter"
@@ -36019,13 +35995,13 @@
         "des": "Que lembra o zóster.",
         "en": "zosteriform"
     },
-    "abba": {
-        "des": "music band"
+    "aaaaaaaaaaaaaaaaaaaaaaa": {
+        "des": "aaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "test": {
+        "des": "test"
     },
     "queen": {
-        "des": "ay"
-    },
-    "king": {
-        "des": "awrqw"
+        "des": "music"
     }
 }
