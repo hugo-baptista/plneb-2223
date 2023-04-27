@@ -2,6 +2,16 @@
 
 {% block body %}
 
+<form action="/term" method="POST">
+    <label>Term:</label>
+    <input name="term">
+
+    <label>Description:</label>
+    <input name="description">
+
+    <button type="submit">Send</button>
+</form>
+
 <div class="list-group">
     {% for designation in designations %}
         <a href="/term/{{designation}}" class="list-group-item list-group-item-action">{{designation}}</a>

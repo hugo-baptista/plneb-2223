@@ -1,10 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import json
 
 app = Flask(__name__)
 
-file = open('./trabalhos_aulas/aula_5/dicionario_pt_en_completo.json')
-dictionary = json.load(file)
+try:
+    file = open('./trabalhos_aulas/aula_7/database_modified.json')
+except:
+    file = open('./trabalhos_aulas/aula_7/database_original.json')
+database = json.load(file)
+file.close()
 
 notfound={
     "des": "Not in the dictionary",
@@ -17,11 +21,24 @@ def home():
 
 @app.route("/terms")
 def terms():
-    return render_template("terms.html", designations=dictionary.keys())
+    return render_template("terms.html", designations=database.keys())
 
 @app.route("/term/<t>")
 def term(t):
-    return render_template("term.html", designation=t, value=dictionary.get(t, notfound))
+    return render_template("term.html", designation=t, value=database.get(t, notfound))
+
+@app.route("/term", methods=["POST"])
+def add_term():
+    term = request.form["term"]
+    description = request.form["description"]
+
+    database[term]={"des": description}
+
+    file = open('./trabalhos_aulas/aula_7/database_modified.json', "w")
+    json.dump(database, file, ensure_ascii=False, indent=4)
+    file.close()
+
+    return render_template("terms.html", designations=database.keys())
 
 @app.route("/terms/search")
 def termssearch():
