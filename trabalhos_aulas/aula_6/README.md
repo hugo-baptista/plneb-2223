@@ -2,7 +2,7 @@
 
 Este exercício teve como objetivo a criação de um servidor *Flask* com informações sobre 3 temas: engenharia, égua e elefante.
 
-Para tal, no ficheiro *flask_server.py*, criou-se o servidor *Flask* na porta 3000 do *localhost*, tendo ele 4 *routes* possíveis:
+Para tal, no ficheiro `flask_server.py`, criou-se o servidor *Flask* na porta 3000 do *localhost*, tendo ele 4 *routes* possíveis:
 - `http://localhost:3000/` - Página inicial
 - `http://localhost:3000/engenharia` - Página sobre a engenharia
 - `http://localhost:3000/egua` - Página sobre a égua
