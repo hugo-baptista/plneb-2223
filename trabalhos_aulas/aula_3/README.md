@@ -11,7 +11,7 @@ Feito na aula, procede ao seguintes passos de processamento do texto:
 
 \f<explicação>
 ```
-- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por `#E=` em uma só linha.
+- Remoção dos `\n` das explicações, ou seja, "colapsar" linhas que começam por `#E=` em uma só linha.
 - Remoção dos marcadores `#T=` e `#E=`.
 
 De seguida, procura todas as entradas com o formato regex `\n\n(.+)\n(.+)`, retornando uma lista de tuplos em que o primeiro elemento é um termo e o segundo elemento é a sua explicação (ou pelo menos, é esse o objetivo).
@@ -68,7 +68,7 @@ Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed 
 - Remoção dos restantes `\n\f+` (correspondente ao segundo e terceiro caso).
 - Marcação, com `#T=`, dos termos, ou seja, das linhas seguidas por `\n\n`.
 - Marcação, com `#E=`, das explicações dos termos, ou seja, das restantes linhas.
-- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por `#E=` em uma só linha.
+- Remoção dos `\n` das explicações, ou seja, "colapsar" linhas que começam por `#E=` em uma só linha.
 - Remoção dos marcadores `#T=` e `#E=`.
 
 A restante conversão para o ficheiro HTML é semelhante à realizada na versão 2, ou seja, para uma tabela.
