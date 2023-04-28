@@ -2,7 +2,7 @@
 
 Este exercício teve como objetivo a criação de um servidor *Flask* utilizando o ficheiro JSON criado na aula 5 (`dicionario_pt_en_completo.json`, copiado para a pasta com o nome `database_original.json`), que contém um dicionário com os termos como chaves, e os seus valores sendo um dicionário, com a descrição do mesmo e a sua traduão para inglês.
 
-Para tal, utilizou-se a *framework Bootstrap* para o desenvolvimento das páginas HTML, com a criação da *navbar*, do *footer*, da *list* dos termos, do *form* para adicionar novos termos e do *button* para eliminar termos.
+Para tal, utilizou-se a *framework Bootstrap 5.0* (https://getbootstrap.com/docs/5.0/getting-started/introduction/) para o desenvolvimento das páginas HTML, com a criação da *navbar*, do *footer*, da *list* dos termos, do *form* para adicionar novos termos e do *button* para eliminar termos.
 
 O servidor *Flask*, na porta 3000 do *localhost*, contém 4 possíveis *routes*:
 - `http://localhost:3000/` - Página inicial
