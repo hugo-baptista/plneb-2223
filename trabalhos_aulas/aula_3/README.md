@@ -2,19 +2,19 @@
 
 ## Versão 1
 Feito na aula, procede ao seguintes passos de processamento do texto:
-- Remoção dos caracteres de Form Feed ("\f").
-- Marcação, com "#T=", dos termos, ou seja, das linhas seguidas por "\n\n", dois "new line".
-- Marcação, com "#E=", das explicações dos termos, ou seja, das restantes linhas.
+- Remoção dos caracteres de Form Feed (`\f`).
+- Marcação, com `#T=`, dos termos, ou seja, das linhas seguidas por `\n\n`, dois "new line".
+- Marcação, com `#E=`, das explicações dos termos, ou seja, das restantes linhas.
 - Correção das explicações "desformatadas" pelos carateres de Form Feed, ou seja, que aparecem no formato:
 ```
 <termo>
 
 \f<explicação>
 ```
-- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por "#E=" em uma só linha.
-- Remoção dos marcadores "#T=" e "#E=".
+- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por `#E=` em uma só linha.
+- Remoção dos marcadores `#T=` e `#E=`.
 
-De seguida, procura todas as entradas com o formato regex \n\n(.+)\n(.+), retornando uma lista de tuplos em que o primeiro elemento é um termo e o segundo elemento é a sua explicação (ou pelo menos, é esse o objetivo).
+De seguida, procura todas as entradas com o formato regex `\n\n(.+)\n(.+)`, retornando uma lista de tuplos em que o primeiro elemento é um termo e o segundo elemento é a sua explicação (ou pelo menos, é esse o objetivo).
 
 Assim sendo, utiliza estes tuplos para contruir um ficheiro HTML que apresenta uma lista destes.
 
@@ -35,7 +35,7 @@ Mas a explicação também pode ser "desformatada" a meio, e não apenas no iní
 
 \f<fim da explicação>
 ```
-Este problema indica que a correção da "desformatação" causada pelos caracteres de Form Feed tem de ser corrigida no momento em que os removemos, e não posteriormente, com recuso aos marcadores do texto, pois nesse momento perdemos a localização das desformatações, que eram marcadas pelos caracteres "\f".
+Este problema indica que a correção da "desformatação" causada pelos caracteres de Form Feed tem de ser corrigida no momento em que os removemos, e não posteriormente, com recuso aos marcadores do texto, pois nesse momento perdemos a localização das desformatações, que eram marcadas pelos caracteres `\f`.
 
 ## Versão 3
 Assim, verifica-se que os caracteres de Form Feed podem aparecer em 3 situações:
@@ -61,20 +61,20 @@ Assim, verifica-se que os caracteres de Form Feed podem aparecer em 3 situaçõe
 
 Como será possível distinguir estres 3 casos para os corrigir? Uma possível maneira é o facto da explicação ser sempre iniciada por uma letra maiúscula, enquanto que o termo e o resto da explicação iniciam, em regra geral, por letra minúscula.
 
-Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed aparece se inicia por uma letra maiúscula, este tem de ser simplesmente removido. Já no segundo e no terceiro caso, para além da remoção do \f, também podemos remover um \n anterior ao mesmo, para conseguir juntar a explicação ao termo ou à restante explicação.
+Ou seja, no primeiro caso, quando a linha seguinte onde o caracter de Form Feed aparece se inicia por uma letra maiúscula, este tem de ser simplesmente removido. Já no segundo e no terceiro caso, para além da remoção do `\f`, também podemos remover um `\n` anterior ao mesmo, para conseguir juntar a explicação ao termo ou à restante explicação.
 
 É este o princípio de funcionamento da versão 3, que realiza as seguintes operações:
-- Remoção dos \f em strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])", ou seja, um \f cuja linha seguinte ao mesmo começa por uma letra maiúscula, seja ela de A a Z ou qualquer outro caractere especial da língua portuguesa (correspondente ao primeiro caso apresentado).
-- Remoção dos restantes \n\f+ (correspondente ao segundo e terceiro caso).
-- Marcação, com "#T=", dos termos, ou seja, das linhas seguidas por "\n\n".
-- Marcação, com "#E=", das explicações dos termos, ou seja, das restantes linhas.
-- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por "#E=" em uma só linha.
-- Remoção dos marcadores "#T=" e "#E=".
+- Remoção dos `\f` em strings do género `\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])`, ou seja, um `\f` cuja linha seguinte ao mesmo começa por uma letra maiúscula, seja ela de A a Z ou qualquer outro caractere especial da língua portuguesa (correspondente ao primeiro caso apresentado).
+- Remoção dos restantes `\n\f+` (correspondente ao segundo e terceiro caso).
+- Marcação, com `#T=`, dos termos, ou seja, das linhas seguidas por `\n\n`.
+- Marcação, com `#E=`, das explicações dos termos, ou seja, das restantes linhas.
+- Remoção dos "new line" das explicações, ou seja, "colapsar" linhas que começam por `#E=` em uma só linha.
+- Remoção dos marcadores `#T=` e `#E=`.
 
 A restante conversão para o ficheiro HTML é semelhante à realizada na versão 2, ou seja, para uma tabela.
 
 ### Problema com a Versão 3
-A remoção dos \f em strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])" pode vir a ter problemas caso existam \f em explicações nas quais a próxima linha comece com uma letra maiúscula, como por exemplo um nome. Para tentar verificar a existência destes casos, criei o ficheiro "search_term_ff.py" que coloca todas as strings do género "\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])" num ficheiro de texto "v3/0_search.txt". Efetivamente, verifica-se que este caso acontece nos termos "Fahrenheit" e "parasito":
+A remoção dos `\f` em strings do género `\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])` pode vir a ter problemas caso existam `\f` em explicações nas quais a próxima linha comece com uma letra maiúscula, como por exemplo um nome. Para tentar verificar a existência destes casos, criei o ficheiro `search_term_ff.py` que coloca todas as strings do género `\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])` num ficheiro de texto `v3/0_search.txt`. Efetivamente, verifica-se que este caso acontece nos termos "Fahrenheit" e "parasito":
 ```
 Fahrenheit, termômetro de
 Termômetro com graduação de Fahrenheit, marcando 32 graus na congelação e 212 graus na ebulição,
