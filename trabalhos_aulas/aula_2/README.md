@@ -11,7 +11,7 @@ Assumi que o sinal de pontuação válido para o final de uma expressão pode se
 ## Ficha_RE_2
 
 ### Exercício 2
-Assumi que a extensão dos ficheiros (por exemplo, `.txt`, `.png`, `.docx`...) são constituídas apenas por alfanuméricos, ou seja, sem pontos nem hífens.
+Assumi que a extensão dos ficheiros (por exemplo, `.txt`, `.png`, `.docx`...) são constituídas apenas por alfanuméricos, ou seja, sem pontuação nem hífens.
 
 ### Exercício 3
 Utilizei 3 grupos para separar os nomes: o 1º grupo captura o primeio nome, o 3º grupo o último nome e o 2º grupo captura todos os nomes intermédios (incluíndo os conectores). Caso o texto apenas apresente o primeiro e último nome, o 2º grupo fica vazio.
