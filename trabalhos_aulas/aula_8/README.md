@@ -1,1 +1,0 @@
-# Resolução do exercício da Aula 8 - spiCy
