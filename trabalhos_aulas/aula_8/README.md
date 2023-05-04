@@ -9,8 +9,8 @@ Para calcular as ocorrências dos verbos num texto, criou-se um ciclo que verifi
 ### Exercício 2 - Ocorrências de entidades, nomes e localidades
 
 Para calcular as ocorrências de entidades, nomes e localidades, lê-se um dos ficheiros presentes na diretoria `livros`, e com um ciclo das entidades presentes no texto, adicionamos as mesmas a três listas diferentes:
-- `entidades_lista` - para todos os casos
-- `nomes` - caso o tipo de entidade seja `PER` (ou seja, uma pessoa)
-- `lugares` - caso o tipo de entidade seja `LOC` (ou seja, uma localidade)
+- `entidades_lista` - para todos os casos;
+- `nomes` - caso o tipo de entidade seja `PER` (ou seja, uma pessoa);
+- `lugares` - caso o tipo de entidade seja `LOC` (ou seja, uma localidade).
 
 De seguida, realiza-se a contagem destas listas, apresentando os top 10 elementos com mais ocorrências de cada uma das listas. O número de elementos apresentados pode ser alterado através da mudança da variável `top`.
