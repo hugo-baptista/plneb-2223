@@ -14,3 +14,13 @@ Para calcular as ocorrências de entidades, nomes e localidades, lê-se um dos f
 - `lugares` - caso o tipo de entidade seja `LOC` (ou seja, uma localidade).
 
 De seguida, realiza-se a contagem destas listas, apresentando os top 10 elementos com mais ocorrências de cada uma das listas. O número de elementos apresentados pode ser alterado através da mudança da variável `top`.
+
+### Exercício 3 - "Best friends"
+
+Para verificar quais entidades que mais aparecem conjuntamente em frases dos livros, primeiramente lê-se o ficheiro, e de seguida cria-se uma lista de listas das pessoas que aparecem em conjunto numa frase, ou seja, uma matriz cujas linhas são as entidades com tipo `PER` (ou cujo texto é `Harry` ou `Harry Potter`, pois estes são marcados como `MISC` no documento `harry_potter_pedra_filosofal.txt`) que aparecem numa só frase.
+
+Para isso, lê-se uma frase de cada vez, criando-se uma lista com as entidades previamente descritas dessa frase, sem repetidos. Caso esta lista tenha pelo menos 2 elementos, visto que se quer contar os pares que existem nas frases, é adicionada à matriz.
+
+Se seguida, utilizando a função `combinations` da biblioteca `itertools`, pega-se em cada linha da matriz, e calcula-se o número de combinações 2 a 2 possíveis dos seus elementos, ou seja, caso a linha tenha 3 pessoas, por exemplo `[Carlos, Ega, Maria]`, então existem 3 possíveis combinações: `(Carlos, Ega)`, `(Carlos, Maria)` e `(Ega, Maria)`. Também é importante salientar que se realiza o sort desses tuplos para remover a ordem dos termos, ou seja, para contabilizar `(Carlos, Ega)` e `(Ega, Carlos)` como sendo iguais. Todas estes tuplos das combinações são guardados na lista `combinacoes`.
+
+De seguida, realiza-se o `Counter` dessa lista e apresentam-se os top 10 dos pares com mais ocorrências no texto, de forma semelhante ao `Exercício 2`.
