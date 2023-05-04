@@ -4,4 +4,4 @@ No ficheiro `ex1.py`, inicialmente, realizou-se uma exploração básica das fun
 
 ### Exercício 1
 
-Para calcular as ocorrências dos verbos num texto, criou-se um ciclo que verifica a POS (*Part of Speech*) de cada palavra do texto, verificando se esta equivale a um `VERB`, que corresponde a um verbo. Nesse caso, tenta acrescentar em 1 a contagem do lema dessa palavra num dicionário (chamado `contador`). Caso não consiga, é porque o lema não existe nas keys do dicionário, e diciona-o ao mesmo com o valor 1.
+Para calcular as ocorrências dos verbos num texto, criou-se um ciclo que verifica a POS (*Part of Speech*) de cada palavra do texto, verificando se esta equivale a um `VERB`, que corresponde a um verbo. Nesse caso, tenta acrescentar em 1 a contagem do lema dessa palavra no dicionário `contador`. Caso não consiga acrescentar 1, é porque o lema não existe nas keys do dicionário, e diciona-o ao mesmo com o valor 1.
