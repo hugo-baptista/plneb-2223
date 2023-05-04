@@ -12,4 +12,5 @@ Para calcular as ocorrências de entidades, nomes e localidades, lê-se um dos f
 - `entidades_lista` - para todos os casos
 - `nomes` - caso o tipo de entidade seja `PER` (ou seja, uma pessoa)
 - `lugares` - caso o tipo de entidade seja `LOC` (ou seja, uma localidade)
+
 De seguida, realiza-se a contagem destas listas, apresentando os top 10 elementos com mais ocorrências de cada uma das listas. O número de elementos apresentados pode ser alterado através da mudança da variável `top`.
