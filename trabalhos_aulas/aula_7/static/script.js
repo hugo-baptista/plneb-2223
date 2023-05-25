@@ -1,3 +1,7 @@
+$(document).ready(function () {
+    $('#example').DataTable();
+});
+
 function handleDeleteTerm(term) {
     $.ajax("term/"+term, {
         type: "DELETE"

@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import json
+import json, re
 
 app = Flask(__name__)
 
@@ -26,6 +26,17 @@ def terms():
 @app.route("/term/<t>")
 def term(t):
     return render_template("term.html", designation=t, value=database.get(t, notfound))
+
+@app.route("/terms/search")
+def search():
+    text = request.args.get("text")
+    term_list = []
+    if text:
+        for term, dic in database.items():
+            # if text in term or text in dic["des"]:
+            if re.search(text, term, flags=re.I) or re.search(text, dic["des"], flags=re.I):
+                term_list.append((term, dic["des"]))
+    return render_template("search.html", matched=term_list)
 
 @app.route("/term", methods=["POST"])
 def add_term():
@@ -62,5 +73,9 @@ def delete_term(term):
 @app.route("/terms/search")
 def termssearch():
     return render_template("terms-search.html")
+
+@app.route("/table")
+def table():
+    return render_template("table.html")
 
 app.run(host="localhost", port=3000, debug=True)

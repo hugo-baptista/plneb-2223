@@ -31,6 +31,7 @@
         {% for designation in designations %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
                 <a href="/term/{{designation}}" class="list-group-item-action">{{designation}}</a>
+                <button type="button" class="btn btn-success" onclick="handleEditTerm('{{designation}}')">Edit</button>
                 <button type="button" class="btn btn-danger" onclick="handleDeleteTerm('{{designation}}')">Delete</button>
             </li>
         {% endfor %}
