@@ -16,6 +16,6 @@ for disease in diseases:
     # print(f'Title: {title}\nDesignation: {designation}\n')
     disease_dic[title] = designation
 
-file = open('./trabalhos_aulas/aula_9/database.json', 'w', encoding='utf-8')
-json.dump(disease_dic, file, indent=4)
+file = open('./trabalhos_aulas/aula_9/db-deseases-A.json', 'w', encoding='utf-8')
+json.dump(disease_dic, file, indent=4, ensure_ascii=False)
 file.close()
