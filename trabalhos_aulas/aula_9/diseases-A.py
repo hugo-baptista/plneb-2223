@@ -1,15 +1,12 @@
 import requests, json, re
 from bs4 import BeautifulSoup
 
-disease_dic = {}
-
 url = 'https://www.atlasdasaude.pt/doencasAaZ'
 html = requests.get(url).text
-
 soup = BeautifulSoup(html, 'html.parser')
 
+disease_dic = {}
 diseases = soup.find_all('div', class_='views-row')
-
 for disease in diseases:
     title = disease.find('div', class_='views-field-title').text
     title = re.sub(r"^ +", "", title);
