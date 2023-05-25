@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 
 disease_dic = {}
 
-base_url = 'https://www.atlasdasaude.pt'
-main_url = '/doencasAaZ'
-main_html = requests.get(base_url+main_url).text
+main_url = 'https://www.atlasdasaude.pt'
+base_url = '/doencasAaZ'
+main_html = requests.get(main_url+base_url).text
 
 main_soup = BeautifulSoup(main_html, 'html.parser')
 
@@ -14,7 +14,7 @@ divs = main_soup.find_all('div', class_='views-summary views-summary-unformatted
 for div in divs:
     page_url = div.a.get('href')
 
-    html = requests.get(base_url+page_url).text
+    html = requests.get(main_url+page_url).text
 
     soup = BeautifulSoup(html, 'html.parser')
 
