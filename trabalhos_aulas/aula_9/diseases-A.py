@@ -9,11 +9,11 @@ disease_dic = {}
 diseases = soup.find_all('div', class_='views-row')
 for disease in diseases:
     title = disease.find('div', class_='views-field-title').text
-    title = re.sub(r"^ +", "", title);
-    title = re.sub(r" +$", "", title);
+    title = re.sub(r"^ +", "", title)
+    title = re.sub(r" +$", "", title)
     designation = disease.find('div', class_='views-field-body').text
-    designation = re.sub(r"^ +", "", designation);
-    designation = re.sub(r" +$", "", designation);
+    designation = re.sub(r"^ +", "", designation)
+    designation = re.sub(r" +$", "", designation)
     # print(f'Title: {title}\nDesignation: {designation}\n')
     disease_dic[title] = designation
 

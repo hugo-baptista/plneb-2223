@@ -22,8 +22,10 @@ for div in divs:
         designation = re.sub(r"^ +", "", designation)
         designation = re.sub(r" +$", "", designation)
         # print(f'Title: {title}\nDesignation: {designation}\n')
-        disease_dic[title] = designation
+        disease_dic[title] = {
+            "des": designation
+        }
 
-file = open('./trabalhos_aulas/aula_9/db-AtoZ.json', 'w', encoding='utf-8')
+file = open('./trabalhos_aulas/aula_9/db-complete.json', 'w', encoding='utf-8')
 json.dump(disease_dic, file, indent=4, ensure_ascii=False)
 file.close()
