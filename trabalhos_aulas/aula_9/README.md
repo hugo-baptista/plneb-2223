@@ -1,0 +1,1 @@
+# Resolução do exercício da Aula 9 - Introdução ao BeautifulSoup
