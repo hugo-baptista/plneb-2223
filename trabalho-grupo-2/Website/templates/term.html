@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+
+{% block body %}
+
+<div class="row align-items-center">
+    <div class="col d-flex justify-content-center">
+        <div class="card" style="width: auto; margin: 10px;">
+            <div class="card-header">
+                <h1>{{designation}}</h1>
+            </div>
+            <ul class="list-group list-group-flush">
+                {% if "en" in value %}
+                    <li class="list-group-item">English Translation: {{value["en"]}}</li>
+                {% endif %}
+                {% if "pt" in value %}
+                    <li class="list-group-item">Portuguese Translation: {{value["pt"]}}</li>
+                {% endif %}
+                {% if "es" in value %}
+                    <li class="list-group-item">Spanish Translation: {{value["es"]}}</li>
+                {% endif %}
+                {% if "de" in value %}
+                    <li class="list-group-item">German Translation: {{value["de"]}}</li>
+                {% endif %}
+                {% if "des_pt" in value %}
+                    <li class="list-group-item">Description(s) - PT:
+                    {%for i in value["des_pt"] %}
+                       <p>&#8226 {{i}}</p>
+                    {% endfor %}
+                {% endif %}
+                {% if "des_en" in value %}
+                    <li class="list-group-item">Description(s) - EN:
+                    {%for i in value["des_en"] %}
+                       <p>&#8226 {{i}}</p>
+                    {% endfor %}
+                {% endif %}
+                </ul>
+        </div>
+    </div>
+</div>
+
+<div style="display: flex; justify-content: center; margin-bottom: 5px;">
+    <button type="button" class="btn btn-danger" onclick="handleDelete('','{{designation}}')">Delete</button>
+</div>
+
+<div class="row align-items-center">
+    <div class="col d-flex justify-content-center">
+        <div class="list-group">
+            <h4 class="list-group-item-dark">Relations:</h2>
+            {% for relation in relations %}
+                <a href="/term/{{relation}}" class="list-group-item list-group-item-action">{{relation}}</a>
+            {% endfor %}
+        
+        </div>
+    </div>
+</div>
+
+{% endblock %}
