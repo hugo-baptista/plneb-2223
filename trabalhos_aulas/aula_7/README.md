@@ -8,6 +8,8 @@ O servidor *Flask*, na porta 3000 do *localhost*, contém 4 possíveis *routes*:
 - `http://localhost:3000/` - Página inicial
 - `http://localhost:3000/terms` - Página com a listagem dos termos
 - `http://localhost:3000/term/<t>` - Página com as informações do termo `<t>`
-- `http://localhost:3000/terms/search` - Página para a pesquisa de termos (ainda não desenvolvida)
+- `http://localhost:3000/terms/search` - Página para a pesquisa de termos
 
 A página da listagem dos termos também tem um *form* para adicionar termos e um *button* para cada termo para o apagar do dicionário em memória. De seguida, as alterações ao dicionário em memória são guardadas no ficheiro `database_modified.json`, de modo a não alterar o JSON original. Desta forma, sempre que o servidor é iniciado, ele tenta ler o ficheiro `database_modified.json`, e caso este não exista, lê o `database_original.json`.
+
+A página de procura tem um campo para introduir o texto que queremos pesquisar, sendo o resultado apresentado numa lista na mesma página. A procura é feita verificando se existe *match* do texto com o termo ou a descrição do mesmo.
