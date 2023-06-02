@@ -4,11 +4,8 @@ Autor:
 PG50416 Hugo Baptista Fernandes Silva
 ```
 
-Os trabalhos de grupo estão no repositório
+Os trabalhos de grupo estão no seguinte repositório (Com o TP1 no `main` branch e o TP2 no branch `second-assignment`):
 ```
 https://github.com/Tomaicho/nlp-group
-```
-Com o TP1 no `main` branch e o TP2 no branch `second-assignment`
-```
 https://github.com/Tomaicho/nlp-group/tree/second-assignment
 ```
