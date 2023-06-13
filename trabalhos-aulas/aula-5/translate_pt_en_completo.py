@@ -1,7 +1,7 @@
 from deep_translator import GoogleTranslator
 import json
 
-file_dic = open("trabalhos_aulas/aula_5/dicionario.json")
+file_dic = open("trabalhos-aulas/aula-5/dicionario.json")
 dic = json.load(file_dic)
 file_dic.close()
 
@@ -27,6 +27,6 @@ for termo, explicacao in dic.items():
             "en": GoogleTranslator(source='pt', target='en').translate(termo)
         }
 
-new_file_dic = open("trabalhos_aulas/aula_5/dicionario_pt_en_completo.json", "w", encoding="utf-8")
+new_file_dic = open("trabalhos-aulas/aula-5/dicionario_pt_en_completo.json", "w", encoding="utf-8")
 json.dump(new_dic, new_file_dic, ensure_ascii=False, indent=4)
 new_file_dic.close()

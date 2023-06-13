@@ -13,7 +13,7 @@ while re.search(r"#E=.+\n#E=.+", remove_new_lines) != None:
 remove_marks = re.sub(r"#[TE]=", r"", remove_new_lines)
 entries = re.findall(r"\n\n(.+)\n(.+)", remove_marks)
 
-html = open("trabalhos_aulas/aula_3/dicionario_medico_1.html", "w", encoding="utf-8")
+html = open("trabalhos-aulas/aula-3/dicionario_medico_1.html", "w", encoding="utf-8")
 
 header = """
 <html>

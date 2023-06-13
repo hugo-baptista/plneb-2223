@@ -16,7 +16,7 @@ def print_ficheiro_inverso(nome):
     for linha in linhas[::-1]:
         print(linha)
 
-print_ficheiro_inverso("aula_1/texto.txt")
+print_ficheiro_inverso("aula-1/texto.txt")
 
 print("\n---------------- Ex 4 ----------------")
 def print_palavras_frequentes(nome):
@@ -34,7 +34,7 @@ def print_palavras_frequentes(nome):
 def ordena(e):
     return e[1]
 
-print_palavras_frequentes("aula_1/texto.txt")
+print_palavras_frequentes("aula-1/texto.txt")
 
 print("\n---------------- Ex 5 ----------------")
 dic_limpar = {"á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u", "à": "a",
@@ -82,10 +82,10 @@ def limpar_texto(texto):
 
     return texto
 
-nome = "aula_1/texto.txt"
+nome = "aula-1/texto.txt"
 ficheiro = open(nome, "r", encoding="utf-8")
 texto = ficheiro.read()
 res = limpar_texto(texto)
 print(res)
-ficheiro_limpo = open("aula_1/texto-limpo.txt", "w", encoding="utf-8")
+ficheiro_limpo = open("aula-1/texto-limpo.txt", "w", encoding="utf-8")
 ficheiro_limpo.write(res)

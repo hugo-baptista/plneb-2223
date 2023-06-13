@@ -4,7 +4,7 @@ nlp = spacy.load("pt_core_news_md")
 nlp.max_length = 1300000
 
 # Exercício 2 - Ver o top 10 de personagens (entitites) pelas suas ocorrências
-documento=open('./trabalhos_aulas/aula_8/livros/os_maias.txt', 'r').read()
+documento=open('./trabalhos-aulas/aula-8/livros/os_maias.txt', 'r').read()
 texto = nlp(documento)
 
 nomes = []

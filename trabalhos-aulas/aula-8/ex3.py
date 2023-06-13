@@ -5,7 +5,7 @@ nlp.max_length = 1300000
 from itertools import combinations
 
 # Exercício 3 - "Best friends"
-documento=open('./trabalhos_aulas/aula_8/livros/os_maias.txt', 'r').read()
+documento=open('./trabalhos-aulas/aula-8/livros/os_maias.txt', 'r').read()
 texto = nlp(documento)
 
 entidades_matriz = []

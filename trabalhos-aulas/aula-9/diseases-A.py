@@ -13,6 +13,6 @@ for disease in diseases:
     # print(f'Title: {title}\nDesignation: {designation}\n')
     disease_dic[title.strip()] = designation.strip()
 
-file = open('./trabalhos_aulas/aula_9/db-A.json', 'w', encoding='utf-8')
+file = open('./trabalhos-aulas/aula-9/db-A.json', 'w', encoding='utf-8')
 json.dump(disease_dic, file, indent=4, ensure_ascii=False)
 file.close()

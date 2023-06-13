@@ -1,5 +1,4 @@
 import re
-import json
 
 file = open("plneb-2223/data/dicionario_medico.xml", "r", encoding="utf-8")
 text = file.read()
@@ -24,14 +23,43 @@ text = re.sub(r"(#E=.+)\n#E=(.+)", r"\1 \2", text)
 while re.search(r"#E=.+\n#E=.+", text) != None:
     text = re.sub(r"(#E=.+)\n#E=(.+)", r"\1 \2", text)
 
-# Procurar Termos (1º grupo) e suas Explicações (2º grupo)
 entries = re.findall(r"#T=(.+)\n#E=(.+)", text)
+print(entries)
 
-# Criar um dicionário com os Termos como keys e as Explicações como valores
-dicionario = {}
+
+html = open("trabalhos-aulas/aula-4/dicionario_medico.html", "w", encoding="utf-8")
+
+header = """
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset='uft-8' />
+    </head>
+"""
+
+body = """
+    <body>
+        <table>
+            <tr>
+                <th>Termo</th>
+                <th>Explicação</th>
+            </tr>
+"""
 for entry in entries:
-    dicionario[entry[0]] = entry[1]
+    body += f"""
+            <tr>
+                <td>{entry[0]}</td>
+                <td>{entry[1]}</td>
+            </tr>
+"""
+    
+body += """
+        </table>
+    </body>
+"""
 
-jsonfile = open("trabalhos_aulas/aula_4/dicionario.json", "w", encoding="utf-8")
+footer = """
+</html>
+"""
 
-json.dump(dicionario, jsonfile, ensure_ascii=False, indent=4)
+html.write(header+body+footer)

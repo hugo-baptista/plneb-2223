@@ -1,6 +1,6 @@
 import re
 
-file = open("trabalhos_aulas/aula_3/dicionario_medico_4.txt", "r", encoding="utf-8")
+file = open("plneb-2223/data/dicionario_medico.txt", "r", encoding="utf-8")
 text = file.read()
 
 remove_term_ff = re.sub(r"\f(.+\n[A-ZÁÉÍÓÚÀÂÊÔÃÕÇ])", r"\1", text)
@@ -13,45 +13,42 @@ while re.search(r"#E=.+\n#E=.+", collapse_explications) != None:
 remove_marks = re.sub(r"#[TE]=", r"", collapse_explications)
 entries = re.findall(r"\n\n(.+)\n(.+)", remove_marks)
 
-newfile1 = open("trabalhos_aulas/aula_3/v4/1_no_term_ff.txt", "w", encoding="utf-8")
+newfile1 = open("trabalhos-aulas/aula-3/v3/1_no_term_ff.txt", "w", encoding="utf-8")
 newfile1.write(remove_term_ff)
-newfile2 = open("trabalhos_aulas/aula_3/v4/2_no_explication_ff.txt", "w", encoding="utf-8")
+newfile2 = open("trabalhos-aulas/aula-3/v3/2_no_explication_ff.txt", "w", encoding="utf-8")
 newfile2.write(remove_explication_ff)
-newfile3 = open("trabalhos_aulas/aula_3/v4/3_final.txt", "w", encoding="utf-8")
+newfile3 = open("trabalhos-aulas/aula-3/v3/3_final.txt", "w", encoding="utf-8")
 newfile3.write(remove_marks)
 
-html = open("trabalhos_aulas/aula_3/dicionario_medico_4.html", "w", encoding="utf-8")
+
+
+html = open("trabalhos-aulas/aula-3/dicionario_medico_3.html", "w", encoding="utf-8")
 
 header = """
 <html>
-    <head>
-        <link rel="stylesheet" href="styles.css" />
-        <meta charset='uft-8' />
-    </head>
+<head>
+<link rel="stylesheet" href="styles.css" />
+<meta charset='uft-8' />
+</head>
+<body>
 """
 
 body = """
-    <body>
-        <table>
-            <tr>
-                <th>Termo</th>
-                <th>Explicação</th>
-            </tr>
+<table>
+<tr>
+<th>Termo</th>
+<th>Explicação</th>
+</tr>
 """
 for entry in entries:
-    body += f"""
-            <tr>
-                <td>{entry[0]}</td>
-                <td>{entry[1]}</td>
-            </tr>
-"""
-    
-body += """
-        </table>
-    </body>
-"""
+    body += "<tr>"
+    body += f"<td>{entry[0]}</td>"
+    body += f"<td>{entry[1]}</td>"
+    body += "</tr>"
+body += "</table>"
 
 footer = """
+</body>
 </html>
 """
 

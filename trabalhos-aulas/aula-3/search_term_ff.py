@@ -13,5 +13,5 @@ for entry in search_term_ff:
 
 print(new_text)
 
-newfile1 = open("trabalhos_aulas/aula_3/v3/0_search.txt", "w", encoding="utf-8")
+newfile1 = open("trabalhos-aulas/aula-3/v3/0_search.txt", "w", encoding="utf-8")
 newfile1.write(new_text)

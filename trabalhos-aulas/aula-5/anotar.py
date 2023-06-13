@@ -1,9 +1,9 @@
 import json, re
 
-dicio_f = open("trabalhos_aulas/aula_5/dicionario.json")
+dicio_f = open("trabalhos-aulas/aula-5/dicionario.json")
 dicio = json.load(dicio_f)
 
-livro_f = open("trabalhos_aulas/aula_5/LIVRO-Doenças-do-Aparelho-Digestivo.txt")
+livro_f = open("trabalhos-aulas/aula-5/LIVRO-Doenças-do-Aparelho-Digestivo.txt")
 text = livro_f.read()
 
 blacklist = {"e", "de", "são"}
@@ -46,5 +46,5 @@ footer = """
 </html>
 """
 
-html = open("trabalhos_aulas/aula_5/res.html", "w", encoding="utf-8")
+html = open("trabalhos-aulas/aula-5/res.html", "w", encoding="utf-8")
 html.write(header+body+footer)

@@ -4,9 +4,9 @@ import json, re
 app = Flask(__name__)
 
 try:
-    file = open('./trabalhos_aulas/aula_7/database_modified.json')
+    file = open('./trabalhos-aulas/aula-7/database_modified.json')
 except:
-    file = open('./trabalhos_aulas/aula_7/database_original.json')
+    file = open('./trabalhos-aulas/aula-7/database_original.json')
 database = json.load(file)
 file.close()
 
@@ -46,7 +46,7 @@ def add_term():
     if term not in database:
         database[term]={"des": description}
 
-        file = open('./trabalhos_aulas/aula_7/database_modified.json', "w")
+        file = open('./trabalhos-aulas/aula-7/database_modified.json', "w")
         json.dump(database, file, ensure_ascii=False, indent=4)
         file.close()
         return render_template("terms.html", designations=database.keys(),
@@ -62,7 +62,7 @@ def delete_term(term):
 
         del database[term]
 
-        file = open('./trabalhos_aulas/aula_7/database_modified.json', "w")
+        file = open('./trabalhos-aulas/aula-7/database_modified.json', "w")
         json.dump(database, file, ensure_ascii=False, indent=4)
         file.close()
 
